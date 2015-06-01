@@ -1,5 +1,5 @@
 //
-//  DTCEuroTest.m
+//  DTCDollarTest.m
 //  Wallet
 //
 //  Created by David de Tena on 01/06/15.
@@ -8,14 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "DTCDollar.h"
 
-#import "DTCEuro.h"
-
-@interface DTCEuroTest : XCTestCase
+@interface DTCDollarTest : XCTestCase
 
 @end
 
-@implementation DTCEuroTest
+@implementation DTCDollarTest
 
 - (void)setUp {
     [super setUp];
@@ -28,21 +27,10 @@
 }
 
 -(void) testMultiplication{
-    DTCMoney *five = [DTCMoney euroWithAmount:5];
+    DTCMoney *five = [DTCMoney dollarWithAmount:5];
     DTCMoney *product = [five times:2];
-    XCTAssertEqualObjects(product, [DTCMoney euroWithAmount:10]);
-}
-
-
--(void) testEquality{
-    DTCMoney *five = [DTCMoney euroWithAmount:5];
-    DTCMoney *otherFive = [DTCMoney euroWithAmount:5];
     
-    XCTAssertEqualObjects(five, otherFive);
-    
-    DTCMoney *seven = [DTCMoney euroWithAmount:7];
-    
-    XCTAssertNotEqualObjects(seven, five);
+    XCTAssertEqualObjects(product, [DTCMoney dollarWithAmount:10]);
 }
 
 @end
