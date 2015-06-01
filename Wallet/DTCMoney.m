@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 David de Tena. All rights reserved.
 //
 
-#import "NSObject+GNUStep.h"
 #import "DTCMoney.h"
 
 @interface DTCMoney()
@@ -18,13 +17,15 @@
 
 #pragma mark -  Class methods
 +(instancetype) dollarWithAmount:(NSUInteger) amount{
-    DTCMoney *dollar = [[DTCMoney alloc] initWithAmount:amount currency:@"USD"];
+    DTCMoney *dollar = [[DTCMoney alloc] initWithAmount:amount
+                                               currency:@"USD"];
     return dollar;
 }
 
 
 +(instancetype) euroWithAmount:(NSUInteger) amount{
-    DTCMoney *euro = [[DTCMoney alloc] initWithAmount:amount currency:@"EUR"];
+    DTCMoney *euro = [[DTCMoney alloc] initWithAmount:amount
+                                             currency:@"EUR"];
     return euro;
 }
 
@@ -40,7 +41,8 @@
 }
 
 -(DTCMoney *) times:(NSUInteger)multiplier{
-    return [[DTCMoney alloc] initWithAmount:_amount currency:self.currency];
+    return [[DTCMoney alloc] initWithAmount:_amount * multiplier
+                                   currency:self.currency];
 }
 
 #pragma mark - Equality

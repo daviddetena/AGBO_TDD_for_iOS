@@ -31,6 +31,7 @@
     XCTAssertNoThrow([DTCMoney euroWithAmount:3]);
 }
 
+
 - (void) testCurrency{
     
     DTCMoney *dollars = [DTCMoney dollarWithAmount:1];
@@ -38,6 +39,27 @@
  
     DTCMoney *euros = [DTCMoney euroWithAmount:1];
     XCTAssertEqualObjects(@"EUR", [euros currency]);
+}
+
+
+-(void) testMultiplication{
+    DTCMoney *five = [DTCMoney euroWithAmount:5];
+    DTCMoney *product = [five times:2];
+    XCTAssertEqualObjects(product, [DTCMoney euroWithAmount:10]);
+    
+    DTCMoney *fiveUSD = [DTCMoney dollarWithAmount:5];
+    DTCMoney *productUSD = [fiveUSD times:2];
+    XCTAssertEqualObjects(productUSD, [DTCMoney dollarWithAmount:10]);
+}
+
+
+-(void) testEquality{
+    DTCMoney *five = [DTCMoney euroWithAmount:5];
+    DTCMoney *otherFive = [DTCMoney euroWithAmount:5];
+    XCTAssertEqualObjects(five, otherFive);
+    
+    DTCMoney *seven = [DTCMoney euroWithAmount:7];
+    XCTAssertNotEqualObjects(seven, five);
 }
 
 @end

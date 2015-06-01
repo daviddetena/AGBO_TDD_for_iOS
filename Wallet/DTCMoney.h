@@ -17,7 +17,8 @@
 +(instancetype) euroWithAmount:(NSUInteger) amount;
 
 #pragma mark - Init
--(id) initWithAmount:(NSUInteger) amount currency:(NSString *) currency;
+-(id) initWithAmount:(NSUInteger) amount
+            currency:(NSString *) currency;
 
 #pragma mark - Methods
 -(DTCMoney *) times:(NSUInteger) multiplier;
