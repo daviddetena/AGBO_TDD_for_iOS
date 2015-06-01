@@ -1,6 +1,6 @@
 //
-//  WalletTests.m
-//  WalletTests
+//  DTCEuroTest.m
+//  Wallet
 //
 //  Created by David de Tena on 01/06/15.
 //  Copyright (c) 2015 David de Tena. All rights reserved.
@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface WalletTests : XCTestCase
+@interface DTCEuroTest : XCTestCase
 
 @end
 
-@implementation WalletTests
+@implementation DTCEuroTest
 
 - (void)setUp {
     [super setUp];
